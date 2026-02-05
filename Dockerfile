@@ -1,4 +1,5 @@
 FROM rocker/rstudio:4.4.2
- 
-RUN R -e "install.packages('cowsay')" # Runs command in new R session, then closes R session when done
 
+COPY renv.lock ./
+COPY .Rprofile ./
+COPY renv/activate.R ./renv/activate.R
